@@ -12,10 +12,10 @@ def dijkstra(graph, entry_point):
             if not is_visited_node[edge_connection[0]]:
                 _dijkstra(edge_connection[0])
 
-    if entry_point not in graph.keys():
-        raise ValueError("Edge with name {point} does not exist".format(point=entry_point))
     if len(graph) == 0:
         return {}
+    if entry_point not in graph.keys():
+        raise ValueError("Edge with name {point} does not exist".format(point=entry_point))
     distance_to = {i: "inf" for i in graph.keys()}
     is_visited_node = {i: False for i in graph.keys()}
     distance_to[entry_point] = 0
